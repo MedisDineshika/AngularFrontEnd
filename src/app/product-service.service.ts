@@ -8,14 +8,16 @@ import { Router } from '@angular/router';
 })
 export class ProductServiceService {
 
- private baseUrl = 'http://localhost:8011/api/v1/stock';
+ private baseUrl = 'http://localhost:8012/api/v1/stock';
 
   constructor(private http: HttpClient) { }
 
    saveProduct(product: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, product);
   }
-  
+  getProductList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
 
  
 }

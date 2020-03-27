@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { SaveProductComponent } from './save-product/save-product.component';
+import { StockListComponent } from './stock-list/stock-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SaveProductComponent
+    SaveProductComponent,
+    StockListComponent
   ],
   imports: [
   FormsModule,

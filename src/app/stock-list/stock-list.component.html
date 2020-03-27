@@ -1,0 +1,27 @@
+<p>stock-list works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Product List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>product_name</th>
+          <th>description</th>
+          <th>colour</th>
+          <th>size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products | async">
+          <td>{{product.product_name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.colour}}</td>
+          <td>{{product.size}}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
