@@ -26,32 +26,13 @@
 }
 </style>
 </div>
-<nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card bg-dark my-5">
-          <div class="card-body">
-
-            <ul class="text-center list-inline py-3">
-              <li class="list-inline-item">
-                <a routerLink="/products" class="btn btn-info">List Products</a>
-              </li>
-              <li class="list-inline-item">
-                <a routerLink="/addProduct" class="btn btn-info">Add product</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
+<div>
 
 
-</nav>
+{{message}}
 
+</div>
 
 <!--<app-save-product></app-save-product>  -->
 <router-outlet></router-outlet>

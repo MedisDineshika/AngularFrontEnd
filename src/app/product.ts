@@ -3,6 +3,10 @@ export class Product {
     id: number;
 	
 	product_name: String ;
+	
+	quantity: number ;
+	
+	price: number ;
 
 	description: String  ;
 	
@@ -15,5 +19,5 @@ export class Product {
 	
 	category: String  ;
 	
-	availability: String ;
+	reorderLevel: number ;
 }

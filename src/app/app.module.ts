@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule }    from '@angular/common/http';
+
 import { SaveProductComponent } from './save-product/save-product.component';
 import { StockListComponent } from './stock-list/stock-list.component';
+import { GenerateBillComponent } from './generate-bill/generate-bill.component';
+import { RegComponentComponent } from './reg-component/reg-component.component';
+import { LoginComponent } from './login/login.component';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SaveProductComponent,
-    StockListComponent
+    StockListComponent,
+    GenerateBillComponent,
+    RegComponentComponent,
+    LoginComponent
   ],
   imports: [
   FormsModule,
