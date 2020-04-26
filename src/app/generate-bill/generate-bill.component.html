@@ -1,0 +1,98 @@
+
+
+<nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-dark my-5">
+          <div class="card-body">
+
+            <ul class="text-center list-inline py-3">
+              <li class="list-inline-item">
+                <a routerLink="/products" class="btn btn-info">List Products</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/addProduct" class="btn btn-info">Add product</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/addBill" class="btn btn-info">Create Bill</a>
+              </li>
+              
+				<li class="list-inline-item">
+                <a routerLink="/product/:id" class="btn btn-info">Get Bill</a>
+              </li>
+               <li class="list-inline-item">
+                <a routerLink="/addCustomer" class="btn btn-info">Create Customer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--  <router-outlet></router-outlet>-->
+      </div>
+    </div>
+  </div>
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+<div class="row">
+ <ul class="text-center list-inline py-3">
+ <li class="list-inline-item">
+<select (change)="selectChangeHandler($event)" >
+  <option value="skirts-short">SkS</option>
+  <option value="skirts-long">SkL</option>
+  <option value="Trousersfemale">TrF</option>
+  <option value="blouse">Bl</option>
+  <option value="Tops">T</option>
+  <option value="frock" selected>Fr</option>
+</select>
+</li>
+<!--  -->
+<li class="list-inline-item">
+ 
+{{selectedOne}}
+</li>
+
+
+
+<li class="list-inline-item">
+<div class="form-group" style="width: 400px">
+	
+      <label for="name">Qty</label>
+      <input [(ngModel)]="Qty"  type="number" class="form-control" id="Qty"  name="Qty">
+   </div> 
+    
+ </li> 
+ <li class="list-inline-item">  
+    <div class="form-group">
+      <label for="name">Unit Price (Rs)</label>
+      <input  [(ngModel)] =  "price" type="number"  class="form-control" id="price"  name="price" >
+    </div>
+  </li>  
+  <li class="list-inline-item">   
+   
+    <button  class="btn btn-success" (click)="multi()" >CALCULATE</button>
+  </li>
+  <li class="list-inline-item">  
+    {{result}}
+    </li>
+    
+  </ul>  
+   </div> 
+    
+    
+    
+  <h4 onclick="window.print();"> Print </h4>  
+    
+    
+  
+    

@@ -1,0 +1,67 @@
+
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card bg-dark my-5">
+          <div class="card-body">
+
+            <ul class="text-center list-inline py-3">
+              <li class="list-inline-item">
+                <a routerLink="/products" class="btn btn-info">List Products</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/addProduct" class="btn btn-info">Add product</a>
+              </li>
+              <li class="list-inline-item">
+                <a routerLink="/addBill" class="btn btn-info">Create Bill</a>
+              </li>
+              
+				<li class="list-inline-item">
+                <a routerLink="product/:id" class="btn btn-info">Get Bill</a>
+              </li>
+               <li class="list-inline-item">
+                <a routerLink="/addCustomer" class="btn btn-info">Create Customer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--  <router-outlet></router-outlet>-->
+      </div>
+    </div>
+  </div>
+
+
+</nav>
+<div class="container col-lg-6">
+ <div class="container">
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">customer_name</label>
+      <input type="text" class="form-control" id="customer_name" required [(ngModel)]="customer.customer_name" name="customer_name">
+    </div>
+<div class="form-group">
+      <label for="name">company</label>
+      <input type="text" step="0.01"  class="form-control" id="company" required [(ngModel)]="customer.company" name="company">
+    </div>
+    
+    
+<div class="form-group">
+      <label for="name">contactNum</label>
+      <input type="number" class="form-control" id="contactNum" required [(ngModel)]="customer.contactNum" name="contactNum">
+    </div>
+    
+
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+</div>
+</div>
