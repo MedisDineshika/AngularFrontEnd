@@ -11,6 +11,10 @@ import { RegComponentComponent } from './reg-component/reg-component.component';
 import { LoginComponent } from './login/login.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SellingOrderComponent } from './selling-order/selling-order.component';
+
+
+
 
 
 @NgModule({
@@ -20,7 +24,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     StockListComponent,
     GenerateBillComponent,
     RegComponentComponent,
-    LoginComponent
+    LoginComponent,
+    SellingOrderComponent,
+    
+    
   ],
   imports: [
   FormsModule,
