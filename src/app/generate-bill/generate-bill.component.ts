@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProductServiceService } from '../product-service.service';
+import { Product } from '../product';
+import { Router } from '@angular/router';
+import { Observable } from "rxjs";
 @Component({
   selector: 'app-generate-bill',
   templateUrl: './generate-bill.component.html',
@@ -9,18 +12,25 @@ import { Component, OnInit } from '@angular/core';
   
 })
 export class GenerateBillComponent implements OnInit {
-
+  products: Observable<Product[]>;
+	 
+  product = new Product()
+ 
+ dataarray =[];
+  	constructor(private productServiceService: ProductServiceService,
+    private router: Router) { }
 	
 	
-	
-	public Qty : number;
+	public quantity : number;
 	public price : number;
 	
 	public result : number;
 	
 	multi(){
 	
-	this.result = this.Qty * this.price ;
+	this.result = this.quantity * this.price ;
+	
+	
 	
 	}
 	
@@ -33,13 +43,25 @@ export class GenerateBillComponent implements OnInit {
 	
 	
 	}
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
+  
+   this.reloadData();
+  this.dataarray.push(this.product);
   }
+reloadData() {
 
-
-
-
-
+	
+    this.products = this.productServiceService.getProductList();
+   
+  }
+ addForm(){
+ 
+ this.product = new Product 
+ this.dataarray.push(this.product);
+ 
+ }
+removeForm(index){
+this.dataarray.splice(index);
+}
 }

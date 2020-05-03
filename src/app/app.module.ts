@@ -12,6 +12,12 @@ import { LoginComponent } from './login/login.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SellingOrderComponent } from './selling-order/selling-order.component';
+import { CreateSOrderComponent } from './create-sorder/create-sorder.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OrdersComponent } from './orders/orders.component';
+import { SorderComponent } from './orders/sorder/sorder.component';
+
+import { SorderItemsComponent } from './orders/sorder-items/sorder-items.component';
 
 
 
@@ -26,6 +32,11 @@ import { SellingOrderComponent } from './selling-order/selling-order.component';
     RegComponentComponent,
     LoginComponent,
     SellingOrderComponent,
+    CreateSOrderComponent,
+    OrdersComponent,
+    SorderComponent,
+    
+    SorderItemsComponent,
     
     
   ],
@@ -33,7 +44,8 @@ import { SellingOrderComponent } from './selling-order/selling-order.component';
   FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

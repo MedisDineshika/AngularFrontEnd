@@ -1,6 +1,6 @@
 export class Customer {
 
-id :number;
+CustomerId :number;
 customer_name:String;
 company:String ;
 contactNum:number ;

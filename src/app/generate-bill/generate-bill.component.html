@@ -15,13 +15,12 @@
               <li class="list-inline-item">
                 <a routerLink="/addProduct" class="btn btn-info">Add product</a>
               </li>
+               
               <li class="list-inline-item">
                 <a routerLink="/addBill" class="btn btn-info">Create Bill</a>
               </li>
               
-				<li class="list-inline-item">
-                <a routerLink="/product/:id" class="btn btn-info">Get Bill</a>
-              </li>
+				
                <li class="list-inline-item">
                 <a routerLink="/addCustomer" class="btn btn-info">Create Customer</a>
               </li>
@@ -36,62 +35,116 @@
 
 </nav>
 
-
-
-
-
-
-
-
-
-<div class="row">
- <ul class="text-center list-inline py-3">
- <li class="list-inline-item">
+ <div class ="container">
+<div class="form-group col-md-4">
+<label>Customer     :</label>
 <select (change)="selectChangeHandler($event)" >
-  <option value="skirts-short">SkS</option>
-  <option value="skirts-long">SkL</option>
-  <option value="Trousersfemale">TrF</option>
-  <option value="blouse">Bl</option>
-  <option value="Tops">T</option>
-  <option value="frock" selected>Fr</option>
+  <option value="Raman">Raman</option>
+  <option value="Onelka">Onelka</option>
+  <option value="Samnmali">Samnmali</option>
+  <option value="Frank" selected>Frank</option>
 </select>
-</li>
-<!--  -->
-<li class="list-inline-item">
+</div>
+
+<div class="form-group col-md-4">
  
 {{selectedOne}}
-</li>
+</div>
+</div>
 
 
 
-<li class="list-inline-item">
-<div class="form-group" style="width: 400px">
-	
-      <label for="name">Qty</label>
-      <input [(ngModel)]="Qty"  type="number" class="form-control" id="Qty"  name="Qty">
-   </div> 
-    
- </li> 
- <li class="list-inline-item">  
-    <div class="form-group">
+
+
+
+ <div class ="container">
+<div class="row">
+ 
+
+  <div class="form-group col-md-4">
+    <label for="product.product_name">Product Name with Unit Price:</label>
+    <select class="form-control"  >
+    <option *ngFor="let product of products | async">
+    	{{product.product_name}}  {{product.price}} 
+    </option>
+  </select>
+  </div>
+
+
+ 
+
+    <div class="form-group col-md-2">
       <label for="name">Unit Price (Rs)</label>
       <input  [(ngModel)] =  "price" type="number"  class="form-control" id="price"  name="price" >
+       
     </div>
-  </li>  
-  <li class="list-inline-item">   
-   
-    <button  class="btn btn-success" (click)="multi()" >CALCULATE</button>
-  </li>
-  <li class="list-inline-item">  
-    {{result}}
-    </li>
-    
-  </ul>  
+  
+   <div class="form-group col-md-2">
+	
+      <label for="name">Quantity of Items </label>
+      <input [(ngModel)]="quantity"  type="number" class="form-control" id="quantity"  name="quantity">
+      <button  class="btn btn-success" (click)="multi()" >CALCULATE</button>
    </div> 
     
+   <div class="form-group col-md-2">
+  <label for="name">Amount</label>
+  <div>{{result}}</div>  
+   
+   </div> 
+ 
+   </div> 
+   
+ </div>  
+  <form >
+  <div class ="container">
+  
+  <div class ="form-row" *ngFor="let obj of dataarray ; let i = index">
+  
+  
+    <div class="form-group col-md-4 ">
+      <label for="name"></label>
+      <select class="form-control"  id="product_name" required  [(ngModel)]="obj.product_name" name="product_name{{i}}}">
+    <option *ngFor="let product of products | async">
+    	{{product.product_name}} {{product.price}} 
+    </option>
+  </select>
+     </div>
+<div class="form-group col-md-2">
+      <label for="name"></label>
+      <input type="number" step="0.01"  class="form-control" id="price" required [(ngModel)]="obj.price" name="price{{i}}}">
+    </div>
     
     
-  <h4 onclick="window.print();"> Print </h4>  
+<div class="form-group col-md-2">
+      <label for="name"></label>
+      <input type="number" class="form-control" id="quantity" required [(ngModel)]="obj.quantity" name="quantity{{i}}}">
+      <button  class="btn btn-success" (click)="multi()" name = "multi{{i}}}" >CALCULATE</button>
+      
+    </div>
+   
+   
+  
+   
+   
+   <div class="form-group col-md-2" *ngIf="i!=0">
+  
+      <span (click)="removeForm(i)" class ="btn btn-danger"> - </span>
+    </div>
+
+  </div>
+
+
+	<span (click)="addForm()" class ="btn btn-success">+</span>
+<button onclick="window.print()" class="btn btn-primary">Print</button>
+
+   
+    
+
+  </div>
+  </form> 
+    
+    
+  
     
     
   

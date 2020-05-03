@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class SellingOrderService {
-private baseUrl = 'http://localhost:8019/api/v1/bill/{id}';
+private baseUrl = 'http://localhost:8019/api/v1/bill';
 
   constructor(private http: HttpClient) { }
 
